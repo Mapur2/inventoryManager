@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { userAuth } from '../context/UserContext'
+import { logoutUser } from '../context/useGetUserData'
 
 function Profile() {
   const { logout, login, authStatus, user } = userAuth()
@@ -7,17 +8,12 @@ function Profile() {
   const [edit, setEdit] = useState(false)
   const [detail, setDetails] = useState({ ...user })
   const inputRef = useRef()
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(detail)
-    setEdit(false)
-  }
 
   const logoutUserProfile = async (e) => {
     e.preventDefault()
     await logoutUser()
     logout()
-    nav("/")
+    window.location.reload();
   }
 
   return (

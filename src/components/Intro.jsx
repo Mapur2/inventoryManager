@@ -13,14 +13,21 @@ const Intro = () => {
                     </div>
                     <div className="flex-col my-4 text-center lg:text-left lg:my-0 lg:justify-end w-full lg:w-1/2 px-8" data-aos="zoom-in" data-aos-delay="500">
 
-                        <h3 className="text-3xl  text-black font-bold">We develop high quality bespoke web and mobile applications for organizations, institutions and SMEs</h3>
+                        <h3 className="text-3xl text-black font-bold">
+                            Manage Your Inventory with Precision and Efficiency
+                        </h3>
                         <div>
-                            <p className='my-3 text-xl text-gray-600 font-semibold'>Welcome to our inventory management website with integrated 
-                            billing features—an all-in-one solution designed to streamline your business operations. Manage your stock, track orders, 
-                            and handle financial transactions with ease, all from a single, user-friendly platform. Perfect for small to 
-                            medium businesses aiming to enhance efficiency and maintain accurate records effortlessly. 
-                            Get started today and take control of your inventory and billing like never before!</p>
+                            <p className="my-3 text-xl text-gray-600 font-semibold">
+                                Welcome to our inventory management website—a comprehensive solution
+                                tailored to streamline stock control, order tracking, and record-keeping.
+                                Perfect for small to medium businesses, our platform offers user-friendly
+                                tools to monitor stock levels, track order history, and maintain accurate
+                                inventory data effortlessly. Stay organized, minimize losses, and boost
+                                operational efficiency with our all-in-one inventory management system.
+                                Get started today and revolutionize the way you manage your inventory!
+                            </p>
                         </div>
+
                         <Link to="/contact" className="text-white bg-black hover:bg-blue-800 inline-flex items-center justify-center w-full px-6 py-2 my-4 text-lg shadow-xl rounded-2xl sm:w-auto sm:mb-0 group">
                             Contact us
                             <svg className="w-4 h-4 ml-1 group-hover: translate-x-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>

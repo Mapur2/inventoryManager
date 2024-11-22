@@ -2,7 +2,8 @@ import { data } from 'autoprefixer';
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-const  url= "http://localhost:8000";
+// const  url= "https://inventry-backend-05uj.onrender.com";
+const url = "http://localhost:8000"
 const loginUser = async (email, password) => {
     /* try {
         const res=await axios.post("/api/v1/users/login",{
@@ -14,7 +15,7 @@ const loginUser = async (email, password) => {
         return null
     } */
     try {
-        const rawResponse = await fetch(url+'/api/v1/users/login', {
+        const rawResponse = await fetch(url + '/api/v1/users/login', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -34,7 +35,7 @@ const loginUser = async (email, password) => {
 const registerUser = async (email, password, fullname, phone, whatsapp) => {
     //console.log(email,password,fullname,phone)
     try {
-        const rawResponse = await fetch(url+'/api/v1/users/register', {
+        const rawResponse = await fetch(url + '/api/v1/users/register', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -56,7 +57,7 @@ const createBusiness = async (business, business_email, whatsapp) => {
 
     try {
         //console.log(email,password,fullname,phone)
-        const rawResponse = await fetch(url+'/api/v1/users/createbusy', {
+        const rawResponse = await fetch(url + '/api/v1/users/createbusy', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -75,7 +76,7 @@ const createBusiness = async (business, business_email, whatsapp) => {
 
 const logoutUser = async () => {
     try {
-        const res = await axios.get(url+"/api/v1/users/logout", { withCredentials: true })
+        const res = await axios.get(url + "/api/v1/users/logout", { withCredentials: true })
 
         return res.data
     } catch (error) {
@@ -83,9 +84,9 @@ const logoutUser = async () => {
     }
 }
 
-const deleteProduct=async (id)=>{
+const deleteProduct = async (id) => {
     try {
-        const res = await axios.get(url+"/api/v1/users/deleteproduct?id="+id, { withCredentials: true })
+        const res = await axios.get(url + "/api/v1/users/deleteproduct?id=" + id, { withCredentials: true })
 
         return res.data
     } catch (error) {
@@ -95,7 +96,7 @@ const deleteProduct=async (id)=>{
 
 const addProduct = async (form) => {
     try {
-        const rawResponse = await axios.post(url+"/api/v1/users/addproduct", form, {
+        const rawResponse = await axios.post(url + "/api/v1/users/addproduct", form, {
             withCredentials: true
         })
 
@@ -106,40 +107,38 @@ const addProduct = async (form) => {
     }
 }
 
-const updateProduct= async (product,id )=>{
-    product={...product,id}
-    console.log(JSON.stringify({...product}))
-    const rawResponse = await fetch(url+'/api/v1/users/updateproduct', {
+const updateProduct = async (product, id) => {
+    product = { ...product, id }
+    console.log(JSON.stringify({ ...product }))
+    const rawResponse = await fetch(url + '/api/v1/users/updateproduct', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         credentials: "include",
-        body: JSON.stringify({...product})
+        body: JSON.stringify({ ...product })
     });
     const content = await rawResponse.json();
     return content
 }
 
-const getProducts = () => {
-    const [data,setData]=useState()
-    useEffect(() => {
+const getProducts = async () => {
 
-        axios.get(url+"/api/v1/users/getallproducts", {
-            withCredentials: true
-        })
-            .then((res) => {
-                setData(res.data)
-            })
-            .catch(err => {
-                console.log(err)
-                setData(null)
-            })
-
-    }, [])
-    console.log(data)
-    return data
+    try {
+        const rawResponse = await fetch(url + '/api/v1/users/getallproducts', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            credentials: "include"
+        });
+        const res=await rawResponse.json()
+        return res.data
+    } catch (error) {
+        return null;
+    }
 }
 
-export { loginUser, logoutUser, registerUser, createBusiness, addProduct, getProducts,updateProduct, deleteProduct }
+export { loginUser, logoutUser, registerUser, createBusiness, addProduct, getProducts, updateProduct, deleteProduct }

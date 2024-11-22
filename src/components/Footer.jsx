@@ -44,19 +44,28 @@ const Footer = () => {
                             <h6 className="text-black text-xl font-bold mb-4">OUR SERVICES</h6>
                             <ul className="text-md">
                                 <li className="mb-2">
-                                    <Link to="#" className="text-black hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Web Development</Link>
+                                    <Link to="#" className="text-black hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">
+                                        Inventory Tracking and Management
+                                    </Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="#" className="text-black hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Mobile App Development</Link>
+                                    <Link to="#" className="text-black hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">
+                                        Stock Optimization Solutions
+                                    </Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="#" className="text-black hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Domain and Hosting</Link>
+                                    <Link to="#" className="text-black hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">
+                                        Real-time Order Monitoring
+                                    </Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="#" className="text-black hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">General IT Consultations</Link>
+                                    <Link to="#" className="text-black hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">
+                                        Comprehensive Reporting Tools
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
+
 
                         {/* 4th block */}
                         <div className="col-span-12 text-center mx-auto lg:col-span-3 font-bold uppercase text-black">

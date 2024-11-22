@@ -10,9 +10,9 @@ function AuthLayout({children,auth,direct}) {
     console.log("Authlayout",user,authStatus)
     useEffect(()=>{
         if(authStatus==false && auth==false)
-            nav("/")
-        else if(authStatus==true && auth==true)
-            nav(direct)
+            nav("/login")
+        /* else if(authStatus==true && auth==true)
+            nav(direct) */
         setLoading(false)
     },[authStatus,nav])
     return loading ? <h1>Loading...</h1> : <>{children}</>

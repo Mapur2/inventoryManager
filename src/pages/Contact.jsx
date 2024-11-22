@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import img from '../assets/img2.png'
 // import emailjs from 'emailjs-com';
 
 const Contact = () => {
@@ -121,16 +122,7 @@ const Contact = () => {
                     </form>
                     <div
                         className="w-full  lg:-mt-96 lg:w-2/6 px-3 py-3 ml-auto bg-blue-900 rounded-2xl">
-                        <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12614.0112251059!2d88.31430628405985!3d22.513840660719477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027109ab7014f7%3A0x9591f7a4c12ac911!2sKalyan%20Automobile%20Engineering%20and%20Trading!5e0!3m2!1sen!2sin!4v1712832343243!5m2!1sen!2sin"
-                         width="430" 
-                         height="450"
-                         
-                         allowfullscreen="" 
-                         loading="lazy" 
-                         referrerpolicy="no-referrer-when-downgrade">
-                        
-                        </iframe>
+                        <img src={img} alt="" />
                     </div>
                 </div>
             </div>
