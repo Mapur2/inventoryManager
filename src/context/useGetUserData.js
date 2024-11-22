@@ -2,8 +2,8 @@ import { data } from 'autoprefixer';
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-// const  url= "https://inventry-backend-05uj.onrender.com";
-const url = "http://localhost:8000"
+const  url= "https://inventry-backend-05uj.onrender.com";
+// const url = "http://localhost:8000"
 const loginUser = async (email, password) => {
     /* try {
         const res=await axios.post("/api/v1/users/login",{

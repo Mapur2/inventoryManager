@@ -22,7 +22,7 @@ function App() {
   }
   const loginContext = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/v1/users/detail", { withCredentials: true })
+      const res = await axios.get("https://inventry-backend-05uj.onrender.com/api/v1/users/detail", { withCredentials: true })
       //console.log(res.data)
       if (res.data.success) {
         login(res.data.data)
