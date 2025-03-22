@@ -25,6 +25,7 @@ const loginUser = async (email, password) => {
             body: JSON.stringify({ email, password })
         });
         const content = await rawResponse.json();
+        console.log(content)
         return content
     } catch (error) {
         return null
@@ -86,7 +87,9 @@ const logoutUser = async () => {
 
 const deleteProduct = async (id) => {
     try {
-        const res = await axios.get(url + "/api/v1/users/deleteproduct?id=" + id, { withCredentials: true })
+        const res = await axios.get(url + "/api/v1/users/deleteproduct?id=" + id, { headers:{
+            Authorization:`Bearer ${localStorage.getItem('accesstoken')}`
+        }})
 
         return res.data
     } catch (error) {
@@ -97,7 +100,9 @@ const deleteProduct = async (id) => {
 const addProduct = async (form) => {
     try {
         const rawResponse = await axios.post(url + "/api/v1/users/addproduct", form, {
-            withCredentials: true
+            headers:{
+                Authorization:`Bearer ${localStorage.getItem('accesstoken')}`
+            }
         })
 
         return rawResponse.data
@@ -114,9 +119,9 @@ const updateProduct = async (product, id) => {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization':`Bearer ${localStorage.getItem('accesstoken')}`
         },
-        credentials: "include",
         body: JSON.stringify({ ...product })
     });
     const content = await rawResponse.json();
@@ -130,9 +135,9 @@ const getProducts = async () => {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            credentials: "include"
+                'Content-Type': 'application/json',
+                'Authorization':`Bearer ${localStorage.getItem('accesstoken')}`
+            }
         });
         const res=await rawResponse.json()
         return res.data

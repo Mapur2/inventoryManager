@@ -7,7 +7,6 @@ function AuthLayout({children,auth,direct}) {
     console.log(direct)
     const [loading, setLoading] = useState(true)
     const {user,authStatus} = userAuth()
-    console.log("Authlayout",user,authStatus)
     useEffect(()=>{
         if(authStatus==false && auth==false)
             nav("/login")

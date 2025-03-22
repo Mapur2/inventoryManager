@@ -20,7 +20,7 @@ function Login() {
                 return alert("Could not login user")
             if (!user.success)
                 return alert(user.message)
-            login(user.data.user)
+            login(user.data)
             nav("/dashboard")
         } catch (error) {
             console.log(error)
